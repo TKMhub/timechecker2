@@ -13,6 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import { db } from "../firebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
 
 const WorkTimeChecker = () => {
   const [employeeId, setEmployeeId] = useState("");
@@ -24,29 +25,29 @@ const WorkTimeChecker = () => {
   const [open, setOpen] = useState(false);
 
   // Firestoreにデータを保存する関数
-  const saveDataToFirestore = () => {
+  const saveDataToFirestore = async () => {
+    // ログ出力はデバッグ目的で残しています。
     console.log({
       employeeId,
       date: years,
       workTime,
       holidayTime,
     });
-    // ドキュメントを保存する
-    db.collection("workTimes")
-      .add({
+
+    try {
+      // コレクションへの参照を作成し、ドキュメントを追加します。
+      await addDoc(collection(db, "workTimes"), {
         employeeId,
         date: years,
         workTime,
         holidayTime,
-      })
-      .then(() => {
-        console.log("データの書き込み成功");
-        handleClose();
-      })
-      .catch((error) => {
-        console.error("データの書き込み成功 ");
-        console.error("Error writing document: ", error);
       });
+      console.log("データの書き込みに成功しました。");
+      handleClose();
+    } catch (error) {
+      console.error("データの書き込みに失敗しました。");
+      console.error("エラー内容: ", error);
+    }
   };
 
   // 登録ボタンを押した時のハンドラーを更新
