@@ -112,7 +112,7 @@ const WorkTimeChecker = () => {
               InputLabelProps={{
                 shrink: true, // ラベルを縮小
               }}
-              style={{ width: "160px" }}
+              style={{ width: "165px" }}
             />
           </FormControl>
         </Grid>
@@ -141,7 +141,7 @@ const WorkTimeChecker = () => {
             color="primary"
             fullWidth
             onClick={handleRegister}
-            style={{ width: "200px" }}
+            style={{ width: "165px" }}
           >
             登録
           </Button>
