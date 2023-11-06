@@ -12,7 +12,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { db } from "../firebaseConfig";
+import { firebasedb } from "../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 
 const WorkTimeChecker = () => {
@@ -36,14 +36,13 @@ const WorkTimeChecker = () => {
 
     try {
       // コレクションへの参照を作成し、ドキュメントを追加します。
-      await addDoc(collection(db, "workTimes"), {
+      await addDoc(collection(firebasedb, "workTimes"), {
         employeeId,
         date: years,
         workTime,
         holidayTime,
       });
       console.log("データの書き込みに成功しました。");
-      handleClose();
     } catch (error) {
       console.error("データの書き込みに失敗しました。");
       console.error("エラー内容: ", error);
@@ -52,10 +51,10 @@ const WorkTimeChecker = () => {
 
   // 登録ボタンを押した時のハンドラーを更新
   const handleRegister = () => {
-    // データを保存
-    saveDataToFirestore();
     // ダイアログを開く
     handleClickOpen();
+    // データを保存
+    saveDataToFirestore();
   };
 
   const handleClickOpen = () => {
