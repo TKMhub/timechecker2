@@ -1,0 +1,52 @@
+[debug] [2023-11-06T13:51:34.270Z] ----------------------------------------------------------------------
+[debug] [2023-11-06T13:51:34.272Z] Command:       /Users/tkm/.nvm/versions/node/v20.9.0/bin/node /Users/tkm/.nvm/versions/node/v20.9.0/bin/firebase deploy
+[debug] [2023-11-06T13:51:34.272Z] CLI Version:   12.7.0
+[debug] [2023-11-06T13:51:34.272Z] Platform:      darwin
+[debug] [2023-11-06T13:51:34.272Z] Node Version:  v20.9.0
+[debug] [2023-11-06T13:51:34.272Z] Time:          Mon Nov 06 2023 22:51:34 GMT+0900 (日本標準時)
+[debug] [2023-11-06T13:51:34.273Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-06T13:51:34.312Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-06T13:51:34.312Z] > authorizing via signed-in user (stxkitayama@gmail.com)
+[debug] [2023-11-06T13:51:34.313Z] [iam] checking project timechecker-456d8 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-11-06T13:51:34.313Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/timechecker-456d8:testIamPermissions [none]
+[debug] [2023-11-06T13:51:34.314Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/timechecker-456d8:testIamPermissions x-goog-quota-user=projects/timechecker-456d8
+[debug] [2023-11-06T13:51:34.314Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/timechecker-456d8:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-11-06T13:51:35.187Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/timechecker-456d8:testIamPermissions 200
+[debug] [2023-11-06T13:51:35.188Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/timechecker-456d8:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-11-06T13:51:35.189Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/timechecker-456d8 [none]
+[debug] [2023-11-06T13:51:35.515Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/timechecker-456d8 200
+[debug] [2023-11-06T13:51:35.515Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/timechecker-456d8 {"projectId":"timechecker-456d8","projectNumber":"359003366102","displayName":"timeChecker","name":"projects/timechecker-456d8","resources":{"hostingSite":"timechecker-456d8"},"state":"ACTIVE","etag":"1_dffb0d65-ae68-4fbe-8cbe-9756feb839f9"}
+[info] 
+[info] === Deploying to 'timechecker-456d8'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-11-06T13:51:35.520Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/timechecker-456d8/versions [none]
+[debug] [2023-11-06T13:51:35.521Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/timechecker-456d8/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-11-06T13:51:36.451Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/timechecker-456d8/versions 200
+[debug] [2023-11-06T13:51:36.451Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/timechecker-456d8/versions {"name":"projects/359003366102/sites/timechecker-456d8/versions/41b8bbf8147c0391","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[timechecker-456d8]: beginning deploy... 
+[info] i  hosting[timechecker-456d8]: found 14 files in build 
+[debug] [2023-11-06T13:51:36.456Z] [hosting] uploading with 200 concurrency
+[debug] [2023-11-06T13:51:36.719Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2023-11-06T13:51:36.719Z] [hosting][hash queue][FINAL] {"max":258,"min":4,"avg":23.785714285714285,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":261}
+[debug] [2023-11-06T13:51:36.719Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/359003366102/sites/timechecker-456d8/versions/41b8bbf8147c0391:populateFiles [none]
+[debug] [2023-11-06T13:51:36.719Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/359003366102/sites/timechecker-456d8/versions/41b8bbf8147c0391:populateFiles {"files":{"/asset-manifest.json":"09d4816dd421bc9606b2bfbdc3a726b6010c11712d3e4f11dbd172986a594d2f","/index.html":"bdb5a8105ea3006b3e1738f5bcfefcc3dcb568e5e70ff73ac26064af4cafd521","/favicon.ico":"b72f7455f00e4e58792d2bca892abb068e2213838c0316d6b7a0d6d16acd1955","/logo512.png":"191fc21360b4ccfb1cda11a1efb97f489ed22672ca83f4064316802bbfdd750e","/static/css/main.cd2f2516.css":"434285b73dd6a5b0985e6dd1e5971891f28878313d89b49d0755ba5e922f560d","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/static/css/main.cd2f2516.css.map":"49d573e9a398459182edb618f6464fdb31ae8d5bc18ce8c4fcd3c51d6b4917db","/logo192.png":"caff018b7f1e8fd481eb1c50d75b0ef236bcd5078b1d15c8bb348453fee30293","/manifest.json":"341d52628782f8ac9290bbfc43298afccb47b7cbfcee146ae30cf0f46bc30900","/static/js/787.edfe5a2c.chunk.js":"8a83c92de1f81b61a92cb2bfed2bb944661ee0291a30cc894398fcac0e3c99d5","/static/js/main.e3047d40.js.LICENSE.txt":"9bf4f862815343643e67cf5b314fba6b4cd4ab7af09fe6a9426318526497ac89","/static/js/787.edfe5a2c.chunk.js.map":"0f189dbeae0b87378b145da26f2253e24c640c6d0b98147b31312a9ba69460a1","/static/js/main.e3047d40.js":"f339e119d092e544309ebd3b698aa6c899b7256af2867443f07c79520eb87a80","/static/js/main.e3047d40.js.map":"87b9ff5d23efa7e2d2c1938f7ded00189330486d7f70d01b2f330cfe509dea4b"}}
+[debug] [2023-11-06T13:51:37.265Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/359003366102/sites/timechecker-456d8/versions/41b8bbf8147c0391:populateFiles 200
+[debug] [2023-11-06T13:51:37.266Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/359003366102/sites/timechecker-456d8/versions/41b8bbf8147c0391:populateFiles {"uploadRequiredHashes":["f339e119d092e544309ebd3b698aa6c899b7256af2867443f07c79520eb87a80","87b9ff5d23efa7e2d2c1938f7ded00189330486d7f70d01b2f330cfe509dea4b","09d4816dd421bc9606b2bfbdc3a726b6010c11712d3e4f11dbd172986a594d2f","bdb5a8105ea3006b3e1738f5bcfefcc3dcb568e5e70ff73ac26064af4cafd521"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files"}
+[debug] [2023-11-06T13:51:37.266Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/f339e119d092e544309ebd3b698aa6c899b7256af2867443f07c79520eb87a80 [none]
+[debug] [2023-11-06T13:51:37.266Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/f339e119d092e544309ebd3b698aa6c899b7256af2867443f07c79520eb87a80 [stream]
+[debug] [2023-11-06T13:51:37.267Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/87b9ff5d23efa7e2d2c1938f7ded00189330486d7f70d01b2f330cfe509dea4b [none]
+[debug] [2023-11-06T13:51:37.267Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/87b9ff5d23efa7e2d2c1938f7ded00189330486d7f70d01b2f330cfe509dea4b [stream]
+[debug] [2023-11-06T13:51:37.268Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/09d4816dd421bc9606b2bfbdc3a726b6010c11712d3e4f11dbd172986a594d2f [none]
+[debug] [2023-11-06T13:51:37.268Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/09d4816dd421bc9606b2bfbdc3a726b6010c11712d3e4f11dbd172986a594d2f [stream]
+[debug] [2023-11-06T13:51:37.268Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/bdb5a8105ea3006b3e1738f5bcfefcc3dcb568e5e70ff73ac26064af4cafd521 [none]
+[debug] [2023-11-06T13:51:37.268Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/bdb5a8105ea3006b3e1738f5bcfefcc3dcb568e5e70ff73ac26064af4cafd521 [stream]
+[debug] [2023-11-06T13:51:37.269Z] [hosting][populate queue][FINAL] {"max":548,"min":548,"avg":548,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":551}
+[debug] [2023-11-06T13:51:37.269Z] [hosting] uploads queued: 4
+[debug] [2023-11-06T13:51:38.304Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/09d4816dd421bc9606b2bfbdc3a726b6010c11712d3e4f11dbd172986a594d2f 200
+[debug] [2023-11-06T13:51:38.305Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/09d4816dd421bc9606b2bfbdc3a726b6010c11712d3e4f11dbd172986a594d2f [stream]
+[debug] [2023-11-06T13:51:38.422Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/bdb5a8105ea3006b3e1738f5bcfefcc3dcb568e5e70ff73ac26064af4cafd521 200
+[debug] [2023-11-06T13:51:38.423Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/bdb5a8105ea3006b3e1738f5bcfefcc3dcb568e5e70ff73ac26064af4cafd521 [stream]
+[debug] [2023-11-06T13:51:39.045Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/f339e119d092e544309ebd3b698aa6c899b7256af2867443f07c79520eb87a80 200
+[debug] [2023-11-06T13:51:39.045Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/timechecker-456d8/versions/41b8bbf8147c0391/files/f339e119d092e544309ebd3b698aa6c899b7256af2867443f07c79520eb87a80 [stream]

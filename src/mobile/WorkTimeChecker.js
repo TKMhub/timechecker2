@@ -112,7 +112,7 @@ const WorkTimeChecker = () => {
               InputLabelProps={{
                 shrink: true, // ラベルを縮小
               }}
-              style={{ width: "140px" }}
+              style={{ width: "160px" }}
             />
           </FormControl>
         </Grid>
