@@ -1,16 +1,19 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
+//ファイル名を「firebaseConfig.js」に変更し、以下にプロジェクト固有の環境変数をセットしてください。
+//Git連携  NG
+
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "あなたのAPIキー",
-  authDomain: "あなたのプロジェクトID.firebaseapp.com",
-  projectId: "あなたのプロジェクトID",
-  storageBucket: "あなたのプロジェクトID.appspot.com",
-  messagingSenderId: "あなたのsenderId",
-  appId: "あなたのappId",
-  measurementId: "あなたのmeasurementId",
+  apiKey: "APIキー",
+  authDomain: "プロジェクトID.firebaseapp.com",
+  projectId: "プロジェクトID",
+  storageBucket: "プロジェクトID.appspot.com",
+  messagingSenderId: "senderId",
+  appId: "appId",
+  measurementId: "measurementId",
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-export const db = firebase.firestore();
+export const db = getFirestore(app);

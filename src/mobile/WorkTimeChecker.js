@@ -12,7 +12,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { db } from "./firebaseConfig";
+import { db } from "../firebaseConfig";
 
 const WorkTimeChecker = () => {
   const [employeeId, setEmployeeId] = useState("");
