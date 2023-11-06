@@ -12,6 +12,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import { db } from "./firebaseConfig";
 
 const WorkTimeChecker = () => {
   const [employeeId, setEmployeeId] = useState("");
@@ -21,6 +22,40 @@ const WorkTimeChecker = () => {
   const [workTime, setWorkTime] = useState("");
   const [holidayTime, setHolidayTime] = useState("");
   const [open, setOpen] = useState(false);
+
+  // Firestoreにデータを保存する関数
+  const saveDataToFirestore = () => {
+    console.log({
+      employeeId,
+      date: years,
+      workTime,
+      holidayTime,
+    });
+    // ドキュメントを保存する
+    db.collection("workTimes")
+      .add({
+        employeeId,
+        date: years,
+        workTime,
+        holidayTime,
+      })
+      .then(() => {
+        console.log("データの書き込み成功");
+        handleClose();
+      })
+      .catch((error) => {
+        console.error("データの書き込み成功 ");
+        console.error("Error writing document: ", error);
+      });
+  };
+
+  // 登録ボタンを押した時のハンドラーを更新
+  const handleRegister = () => {
+    // データを保存
+    saveDataToFirestore();
+    // ダイアログを開く
+    handleClickOpen();
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -105,7 +140,7 @@ const WorkTimeChecker = () => {
             variant="contained"
             color="primary"
             fullWidth
-            onClick={handleClickOpen}
+            onClick={handleRegister}
             style={{ width: "200px" }}
           >
             登録

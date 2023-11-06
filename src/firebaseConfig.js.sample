@@ -1,0 +1,16 @@
+import firebase from "firebase/app";
+import "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "あなたのAPIキー",
+  authDomain: "あなたのプロジェクトID.firebaseapp.com",
+  projectId: "あなたのプロジェクトID",
+  storageBucket: "あなたのプロジェクトID.appspot.com",
+  messagingSenderId: "あなたのsenderId",
+  appId: "あなたのappId",
+  measurementId: "あなたのmeasurementId",
+};
+
+firebase.initializeApp(firebaseConfig);
+
+export const db = firebase.firestore();
